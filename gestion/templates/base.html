@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/aboutus.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Care Center</title>
+</head>
+<body>
+    
+    <header class="hero">
+        <nav class="nav container" id="nav">
+            <h2 class="nav__logo"><a href="/" class="nav__logo1">Care center</a></h2>
+            <ul class="nav__links">
+                <li class="nav__item">
+                    <a href="/" class="nav__link">Home</a>
+                </li >
+                <li class="nav__item">
+                    <a href="/signin" class="nav__link">sign in</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/signup" class="nav__link">sign up</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/aboutus" class="nav__link">about us</a>
+                </li>
+                {% if user.is_authenticated %}
+    
+                <li class="nav__item">
+                    <a href="/patients" class="nav__link">Patients</a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="/create" class="nav__link">Create patient</a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="/signout" class="nav__link">Logout</a>
+                </li>
+
+                <li class="nav__item">
+                    <p class="user__paraf">Welcome {{user.username}} !!</p>
+                </li>
+                {% endif %}    
+            </ul>
+
+
+            <a href="#nav" class="nav__hamburguer">
+                <img src="../static/img/menu.svg" alt="" class="nav__icon">
+            </a>
+
+            <a href="#" class="nav__close">
+                <img src="../static/img/close.svg" alt="" class="nav__icon">
+            </a>
+
+
+        </nav>
+        
+    </header>
+    
+
+    {% block content %}
+    <main>
+        
+    </main>
+    {% endblock %}
+    <footer>
+        <div class="footer">
+            <p class="link__footer">Developed by <a href="https://www.linkedin.com/in/cristian-riveros-8b143b252/" class="link__code">Cris Riv-Con</a> &copy; 2024 </p>
+            <div class="about__more">
+                <p class="title__more">More About the Author</p>
+                <div class="cont__icons">
+                    <a href="https://web.facebook.com/cristiangonzalor?mibextid=ZbWKwL&_rdc=1&_rdr" class="icon__footer">
+                        <box-icon type='logo' name='facebook-circle' color="white" size="md" animation="tada"></box-icon>
+                    </a>
+                    <a href="https://github.com/codegun01" class="icon__footer">
+                        <box-icon type='logo' name='github' color="white" size="md" pull="right" animation="tada"></box-icon>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cristian-riveros-8b143b252/" class="icon__footer">
+                        <box-icon name='linkedin-square' type='logo' color="white" size="md" animation="tada" ></box-icon>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </footer>
+</body>
+</html>

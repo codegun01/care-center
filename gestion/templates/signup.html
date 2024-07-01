@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+   <h1 class="title__signup">Sign up</h1>
+   <div class="cont__signup">
+      <form method="post" class="form__signup">
+         {% csrf_token %}
+         <div class="cont__signup_input">
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" id="id_username" required placeholder="Enter your username" class="input__signup">
+            <p class="sub__signup">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+         </div>
+         <div class="cont__signup_info">
+            <p class="sub__signup">Your password can’t be too similar to your other personal information.</p>
+            <p class="sub__signup">Your password must contain at least 8 characters.</p>
+            <p class="sub__signup">Your password can’t be a commonly used password.</p>
+            <p class="sub__signup">Your password can’t be entirely numeric.</p>
+         </div>
+     
+         <div class="cont__signup_input">
+            <label for="password_1">Password:</label>
+            <input type="password" name="password1" id="password_1" required placeholder="Enter your password"  class="input__signup">
+         </div>
+     
+         <div class="cont__signup_input">
+            <label for="password_2">Password confirmation:</label>
+            <input type="password" name="password2" id="password_2" required placeholder="Confirm your password"  class="input__signup">
+         </div>
+         <button class="btn__signup">Sign in</button>
+      </form>
+   </div>
+ 
+</section>
+ 
+ 
+
+
+{% endblock %}

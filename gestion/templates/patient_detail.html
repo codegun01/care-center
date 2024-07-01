@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <h1>Patient detail</h1>
+    <div class="detail">
+    <div class="cont__detail">
+        <div class="detail__info">
+            <h3>ID: </h3> <p class="info__detail">{{patients.id}}</p>
+        </div>
+        <div class="detail__info">
+            <h3>First name: </h3> <p class="info__detail">{{patients.first_name}}</p>
+        </div>
+        <div class="detail__info">
+            <h3>Last Name: </h3> <p class="info__detail">{{patients.last_name}}</p>
+        </div>
+        <div class="detail__info">
+            <h3>Phone Number: </h3> <p class="info__detail">{{patients.phone}}</p>
+        </div>
+        <div class="detail__info">
+            <h3>E-mail: </h3> <p class="info__detail">{{patients.email}}</p>
+        </div>
+        <div class="detail__info">
+            <h3>Created: </h3> <p class="info__detail">{{patients.created}}</p>
+        </div>
+        <div class="detail__info">
+            <h3>User: </h3> <p class="info__detail">{{patients.user}}</p>
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+
+{% endblock %}

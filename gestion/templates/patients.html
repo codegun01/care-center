@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<section class="container">
+<h1>Patients List</h1>
+<div class="cont__search">
+    <form method="get" class="form__search">
+        <input type="text" name="search" id="" value="{{ request.GET.search}}" placeholder="Search...." class="input__search">
+        <button class="btn__search">Search</button>
+    </form>
+</div>
+
+<div class="cont__table">
+
+
+<div class="table">
+    <div class="table-header">
+        <div class="table-cell">Firstname</div>
+        <div class="table-cell">Lastname</div>
+        <div class="table-cell">Phone</div>
+        <div class="table-cell">Email</div>
+        <div class="table-cell actions">Actions</div>
+    </div>
+    {% for patient in patients %}
+    <div class="table-row">
+        <div class="table-cell">{{patient.first_name}}</div>
+        <div class="table-cell">{{patient.last_name}}</div>
+        <div class="table-cell">{{patient.phone}}</div>
+        <div class="table-cell">{{patient.email}}</div>
+        <div class="table-cell actions">
+            <button class="detail"><a href="{% url 'patient_detail' patient.id %}" class="td__patient">Detail</a></button>
+            <button class="edit"><a href="{% url 'edit_patient' patient.id %}"  class="td__patient">Edit</a></button>
+            <button class="delete"><a href="{% url 'delete_patient' patient.id %}"  class="td__patient">Delete</a></button>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- Puedes añadir más filas de la misma forma -->
+</div>
+
+</div>
+
+
+
+<div class="cont__paginator">
+    <span>
+        {% if patients.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ patients.previous_page_number }}">Previous</a>
+        {% endif %}
+    </span>
+
+    <span>
+        Page {{patients.number}} of {{patients.paginator.num_pages}}
+    </span>
+
+    <span>
+        {% if patients.has_next %}
+        <a href="?page={{ patients.next_page_number}}">Next</a>
+        <a href="?page={{ patients.paginator.num_pages}}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+</section>
+
+{% endblock %}
