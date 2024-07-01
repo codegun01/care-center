@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'gestionclinica.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL',)
+        default=os.getenv('DATABASE_URL','postgresql://djangocrud_y17h_user:y3p3nHLQeKv1aRjIxDj8CY69VtkRD31A@dpg-cpqclaqju9rs73a2hp30-a/djangocrud_y17h')
     )
 }
 
