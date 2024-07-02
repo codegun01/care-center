@@ -253,6 +253,13 @@ body{
     padding: 60px 0;   
 }
 
+.container1{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 0;   
+}
+
 .form__cont{
     height: 60vh;
     display: flex;
@@ -674,12 +681,12 @@ body{
 
 @media screen and (max-width: 600px){
     .title__banner{
-        font-size: 39px;
+        font-size: 35px;
         text-align: center;
     }
 
     .sub__banner{
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .form__signin{
@@ -736,5 +743,9 @@ body{
 
     .form__create{
         width: 100%;
+    }
+
+    .about__more{
+        width: 70%;
     }
 }
